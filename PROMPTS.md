@@ -1,2 +1,2 @@
-###### Prompts: Annotated reference for AI to be used
+# Prompts: Annotated reference for AI to be used
 
