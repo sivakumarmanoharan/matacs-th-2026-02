@@ -67,4 +67,3 @@ For live mode, the additional step of creation of API key from Gemini or Anthrop
 ## Notes
 
 - Experience cap (12 installs) is an assumption and an admin parameter.
-- No prototype script is included.
