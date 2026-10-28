@@ -1,8 +1,10 @@
 # AI-Assisted Proposal Triage Tool: Design
 
 **Name:** Sivakumar Manoharan
+
 **Reference:** MATACS-TH-2026-02
-**Time actually spent: 4 hours over 2 days
+
+**Time actually spent**: 4 hours over 2 days
 
 ## What this is
 
