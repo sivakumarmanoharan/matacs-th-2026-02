@@ -16,7 +16,7 @@ The given problem statement is with respect to a Commercial Solar Installation w
 
 | File | What it contains |
 |---|---|
-| [diagram/process-flow.png](diagram/Matacs_ai_triage_design.pdf) | Process flow from upload to ranked output. Colour-coded to show AI steps, rule-based steps, and human checkpoints. |
+| [diagram/Matacs_ai_triage_design.pdf](diagram/Matacs_ai_triage_design.pdf) | Process flow from upload to ranked output. Colour-coded to show AI steps, rule-based steps, and human checkpoints. |
 | [WRITEUP.md](WRITEUP.md) | Answers to the five questions: AI vs. rules, consistency and explainability, human in the loop, changing criteria, and risks. |
 | [PROMPTS.md](PROMPTS.md) | The three prompts, as they would be sent: injection screen, extraction, and reason writer. |
 | [ranking.json](ranking.json) | Expected ranking of proposals A to E. |
