@@ -44,7 +44,9 @@ The given problem statement is with respect to a Commercial Solar Installation w
 3. In VSCode, navigate to Terminal-> New Terminal
 4. Create a venv using ```python -m venv .venv```
 5. Activate it using ```.venv\Scripts\Activate``` in the terminal
-6. Create a .env file to store the API key of anthropic or gemini
+6. Create a .env file to store the API key of anthropic or gemini if the user wants to test the prompts
+
+
 6. Navigate to prototype folder using ```cd prototype```
 7. Follow the commands below if the user wants to test it offline or with API key
 
@@ -54,6 +56,13 @@ python triage.py --live --provider gemini        # needs GEMINI_API_KEY (Google 
 python triage.py --live                          # Anthropic, needs ANTHROPIC_API_KEY
 ```
 The script compares its result with ranking.json (rank, status, and score) and exits with an error if they differ. Offline mode matches.
+
+## Demo for offline mode
+
+https://github.com/user-attachments/assets/adfc9c10-c711-44a2-bec0-a2710cc88c8d
+
+For live mode, the additional step of creation of API key from Gemini or Anthropic is needed. Once that is done, create a .env file within prototype directory and add the value of the key given in .env.example
+
 
 ## Notes
 
