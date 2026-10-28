@@ -8,7 +8,7 @@
 
 ## What this is
 
-A design for an AI-assisted tool that takes contractor proposals (PDFs) for a category, applies admin-defined criteria, and returns a ranked list with a reason for each position. A human makes the final award decision. This submission is design only. No deployed system is included.
+A design for an AI-assisted tool that takes contractor proposals (PDFs) for a category, applies admin-defined criteria, and returns a ranked list with a reason for each position. A human makes the final award decision. This submission is a design with a prototype that delivers the ranked json based on the sample proposals given.
 
 The given problem statement is with respect to a Commercial Solar Installation which is a 150 kW rooftop system at Windsor, Ontario with a budget ceiling of $260,000 CAD, and completion within 16 weeks of award.
 
@@ -28,6 +28,7 @@ The given problem statement is with respect to a Commercial Solar Installation w
 - **AI reads, code decides.** AI screens for injection, extracts facts with a verbatim quote and page for each, and words the one-line reason. Gates, scoring, ranking, and status are plain code.
 - **Ranking needs at least two eligible proposals.** Price and timeline are scored relative to the best eligible bid.
 - **Result on the sample set:** A ranked 1, E ranked 2. C is flagged for an embedded instruction aimed at automated reviewers. D is flagged because it gives no completion date. B is ineligible because its licence is held by a subcontractor.
+- **Deterministic order:** If two samples are ranked the same, then the order is defined by the least amount quoted and the proposal id. 
 
 ## How I used AI tools
 
