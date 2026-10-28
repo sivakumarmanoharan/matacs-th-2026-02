@@ -16,7 +16,7 @@ The given problem statement is with respect to a Commercial Solar Installation w
 
 | File | What it contains |
 |---|---|
-| [diagram/Matacs_ai_triage_design.pdf](diagram/Matacs_ai_triage_design.pdf) | Process flow from upload to ranked output. Colour-coded to show AI steps, rule-based steps, and human checkpoints. |
+| [diagram/Matacs_ai_triage_design.png](diagram/Matacs_ai_triage_design.png) | Process flow from upload to ranked output. Colour-coded to show AI steps, rule-based steps, and human checkpoints. |
 | [WRITEUP.md](WRITEUP.md) | Answers to the five questions: AI vs. rules, consistency and explainability, human in the loop, changing criteria, and risks. |
 | [PROMPTS.md](PROMPTS.md) | The three prompts, as they would be sent: injection screen, extraction, and reason writer. |
 | [ranking.json](ranking.json) | Expected ranking of proposals A to E. |
@@ -34,10 +34,10 @@ The given problem statement is with respect to a Commercial Solar Installation w
 
 
 - **Tool used:** Claude (Anthropic) and Gemini(Google) for API calls in the prototype.
-- **What I used it for:** I used it for generating my draft mermaid code files, draft documents for writeup and readme and to discuss my flaws with respect to my design. For API calls, I used Gemini(Google), because it gives me with a free tier option, but made anthropic calls as default if the user has anthropic API keys
-- **What I did myself:** Base design is done from my side. Finding the gap in my design where the pdf gets uploaded and evaluation happens. Ranking flag for a single proposal is cancelled by me and I added the rule that ranking should be done between two or more proposals.
+- **What I used it for:** I used it for generating my draft mermaid code files, draft documents for writeup and readme and to discuss my flaws with respect to the design AI generated as a base. For API calls, I used Gemini(Google), because it gives me with a free tier option, but made anthropic calls as default if the user has anthropic API keys
+- **What I did myself:** Finding the gap in the base design AI gave where the pdf gets uploaded and evaluation happens. Ranking flag for a single proposal is cancelled by me and I added the rule that ranking should be done between two or more proposals.
 - **How I checked the output:** I recomputed the scores manually using a calculator and thought of edge cases that would fail. This helped me correct the output and helped me refine my design
-- **Defying the decisions AI took:** The AI suggested to provide only with Claude native support for LLM, but I researched a little bit and found that Gemini is offering free tier API calls for LLMs. So the code was rewritten in a way that it can also use Gemini API key to reduce costs by using free tier. 
+- **Defying the decisions AI took:** The first prototype used only Anthropic. When I asked about cost, Claude listed free-tier options, and I decided to add Gemini. So the code was rewritten in a way that it can also use Gemini API key to reduce costs by using free tier. 
 
 ## Running the prototype
 1. Do a ``git clone`` of the repository

@@ -18,8 +18,7 @@ AI is used in three steps:
 
 Everything else is code or rules: upload, validation, malware scan, hashing, OCR, quote verification, the pass/fail gates, scoring formulas, ranking, tie-breaks, status assignment, storage, and logging. The admin sets the weights and parameters as configuration, and code uses them to calculate points.
 
-I drew the line where the input is unstructured. Extraction is the part where AI turns messy text into evidence. Anything that decides eligibility, order, or status is code, because code is repeatable and explainable, while an AI judgment could be influenced by text hidden in a proposal. The AI never decides a score or rank. The reason writer only receives numbers that code has already computed. In addition to that, code can be easily modifiable when business needs changes when compared to the decisions given to AI.
-
+I drew the line where the input is unstructured. Extraction is the part where AI turns messy text into evidence. Anything that decides eligibility, order, or status is code, because code is repeatable and explainable, while an AI judgment could be influenced by text hidden in a proposal. The AI never decides a score or rank. The reason writer only receives numbers that code has already computed.
 ## 2. Consistency and explainability
 
 - **Repeatable:** scores are arithmetic on stored facts. Extracted facts are saved in a database and cached by file hash plus the schema, prompt, and model versions. A renamed copy of the same PDF reuses the cache, and a changed schema or prompt does not.

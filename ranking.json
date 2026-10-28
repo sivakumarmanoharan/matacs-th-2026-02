@@ -4,34 +4,34 @@
     "rank": 1,
     "status": "ranked",
     "score": 98.8,
-    "reason": "Ranked first with a score of 98.8, driven by strong experience despite a weaker warranty."
+    "reason": "Ranked 1 of 2 (score 98.8); strongest on experience, weakest on warranty."
   },
   {
     "proposal": "E",
     "rank": 2,
     "status": "ranked",
     "score": 88.4,
-    "reason": "Proposal E ranked second with 88.4 points, driven by a strong warranty but hindered by weaker experience."
+    "reason": "Ranked 2 of 2 (score 88.4); strongest on warranty, weakest on experience."
   },
   {
     "proposal": "B",
     "rank": null,
     "status": "ineligible",
     "score": null,
-    "reason": "Ineligible because the licence is not held by the bidder, and quotes for the safety and monitoring plans were not found."
+    "reason": "Ineligible: licence is not held by the bidder."
   },
   {
     "proposal": "C",
     "rank": null,
     "status": "flagged",
     "score": null,
-    "reason": "Proposal flagged due to an embedded instruction aimed at automated reviewers and a clean-content score of 81."
+    "reason": "Flagged: embedded instruction aimed at automated reviewers (quarantined), clean-content score about 81."
   },
   {
     "proposal": "D",
     "rank": null,
     "status": "flagged",
     "score": null,
-    "reason": "The proposal was flagged because the completion time was not stated and the 16-week requirement cannot be confirmed."
+    "reason": "Flagged: completion time not stated, 16-week requirement cannot be confirmed."
   }
 ]
