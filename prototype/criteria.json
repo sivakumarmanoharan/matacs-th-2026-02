@@ -1,0 +1,98 @@
+{
+  "category": "Commercial Solar Installation",
+  "version": 2,
+  "project": {
+    "description": "Commercial rooftop solar system",
+    "project_size_kw": 150,
+    "budget_ceiling_cad": 260000,
+    "max_weeks_from_award": 16,
+    "note": "Project requirements. In a full tool these are set per review round, with category defaults."
+  },
+  "gates": [
+    {
+      "id": "licence",
+      "name": "Ontario electrical contractor licence",
+      "rule": "Licence number is held by the bidder and stated in the proposal. A subcontractor licence or a licence 'to be confirmed' fails. Not stated at all = flagged.",
+      "on_fail": "ineligible"
+    },
+    {
+      "id": "wsib_insurance",
+      "name": "WSIB clearance and $5M liability insurance",
+      "rule": "Both are confirmed in the proposal. One missing = flagged. Stated below $5M = ineligible.",
+      "min_liability_cad": 5000000,
+      "on_fail": "ineligible"
+    }
+  ],
+  "requirement_checks": [
+    {
+      "id": "budget_ceiling",
+      "rule": "total_price_cad <= project.budget_ceiling_cad",
+      "over_limit": "ineligible",
+      "not_stated": "flagged"
+    },
+    {
+      "id": "deadline",
+      "rule": "completion_weeks <= project.max_weeks_from_award",
+      "over_limit": "ineligible",
+      "not_stated": "flagged",
+      "note": "The deadline is a must-have, so a bid that gives no completion time cannot be confirmed compliant."
+    }
+  ],
+  "weighted": [
+    {
+      "id": "experience",
+      "name": "Relevant experience",
+      "weight": 30,
+      "evidence": "Count of commercial installs of 100 kW or more in the last 5 years, plus the start year the bidder gives.",
+      "rule": "weight * min(installs, cap) / cap",
+      "cap": 12
+    },
+    {
+      "id": "price",
+      "name": "Price",
+      "weight": 25,
+      "evidence": "Total price in CAD and whether it is all-in.",
+      "rule": "weight * lowest_eligible_price / bid_price",
+      "baseline": "eligible bids only"
+    },
+    {
+      "id": "timeline",
+      "name": "Timeline",
+      "weight": 15,
+      "evidence": "Completion time in weeks from award.",
+      "rule": "weight * shortest_eligible_weeks / bid_weeks; unstated or over project.max_weeks_from_award is handled by requirement_checks"
+    },
+    {
+      "id": "warranty",
+      "name": "Warranty",
+      "weight": 15,
+      "evidence": "Panel warranty years and workmanship warranty years.",
+      "rule": "weight/2 * min(panel_yrs, 25)/25 + weight/2 * min(workmanship_yrs, 12)/12"
+    },
+    {
+      "id": "team",
+      "name": "Team and approach",
+      "weight": 15,
+      "evidence": "Named project lead, crew size stated, safety plan, monitoring plan.",
+      "rule": "weight/4 for each of the four items present"
+    }
+  ],
+  "validation": [
+    "weighted weights must sum to 100",
+    "gates carry no weight",
+    "every scored criterion needs an evidence description and a rule"
+  ],
+  "ranking": {
+    "sort": "score desc",
+    "tie_break": [
+      "lower price",
+      "proposal id"
+    ],
+    "minimum_eligible_to_rank": 2
+  },
+  "statuses": {
+    "ranked": "passes gates, scored, no blocking flags",
+    "flagged": "needs a human before ranking: injection hit, missing or ambiguous gate evidence, over budget ceiling",
+    "ineligible": "clearly fails a mandatory gate"
+  }
+}

@@ -55,9 +55,9 @@ Criteria are versioned snapshots, and every score records the version it used.
 
 ## Assumptions
 
-1. The experience cap (12 installs) and the maximum timeline (16 weeks) are admin parameters.
-2. No budget ceiling was supplied, so no ceiling check is applied. It would be an admin field per category.
+1. The experience cap (12 installs) is an admin parameter. The project requirements (150 kW rooftop system, $260,000 CAD ceiling, 16 weeks from award) are stored in the criteria config.
+2. The ceiling and the deadline are must-haves, checked after the gates. A bid over either limit is ineligible. A bid that states no price or completion time is flagged, because compliance cannot be confirmed.
 3. Proposal B is ineligible: its electrical licence is held by a subcontractor to be confirmed.
-4. Proposal C is flagged for its embedded instruction to rank it first. If a reviewer clears the flag, it scores about 80 and would rank third.
-5. Proposal D stays ranked although it gave no timeline. That criterion scores 0 with a visible missing-data warning.
-6. "Last 5 years" cannot always be verified, because proposals say "since 2020". The extraction keeps the stated period, and a reviewer confirms it.
+4. Proposal C is flagged for its embedded instruction to rank it first. If a reviewer clears the flag, it scores about 81 and would rank second.
+5. Proposal D is flagged because it gives no completion date, so the 16-week requirement cannot be confirmed. If it commits to a date within 16 weeks, a reviewer can clear it and it joins the pool.
+6. "Last 5 years" cannot always be verified, because proposals say "since 2020". The extraction keeps the stated period for a reviewer to confirm.
