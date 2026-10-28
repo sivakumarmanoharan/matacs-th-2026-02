@@ -41,14 +41,10 @@ The given problem statement is with respect to a Commercial Solar Installation w
 ## Running the prototype
 1. Do a ``git clone`` of the repository
 2. Open the repository in VSCode or any Code Editor preferred
-3. In VSCode, navigate to Terminal-> New Terminal
-4. Create a venv using ```python -m venv .venv```
-5. Activate it using ```.venv\Scripts\Activate``` in the terminal
-6. Create a .env file to store the API key of anthropic or gemini if the user wants to test the prompts
-
-
-6. Navigate to prototype folder using ```cd prototype```
-7. Follow the commands below if the user wants to test it offline or with API key
+3. Create a .env file to store the API key of anthropic or gemini if the user wants to test the prompts
+4. In VSCode, navigate to Terminal-> New Terminal
+5. Navigate to prototype folder using ```cd prototype```
+6. Follow the commands below if the user wants to test it offline or with API key
 
 ```
 python triage.py --offline                       # no API key needed
