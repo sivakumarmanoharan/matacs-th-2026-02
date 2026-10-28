@@ -1,10 +1,16 @@
 # PROMPTS
 
-Three prompts are used. They run in this order, with code between them:
+Three prompts are used. They run at two different times, with code between them.
 
-1. **injection_v1**: runs on every new proposal text. If it reports a finding, code removes that text, sets the status to flagged, and extraction does not run on the quarantined text.
-2. **extraction_v1**: runs only on text that passed the screen. Code then verifies the output, applies the gates, and computes scores and ranks.
-3. **reason_v1**: runs last, after code has computed all scores and ranks.
+**Stage 1, when a file is uploaded (once per proposal):**
+1. **injection_v1** screens the proposal text. If it reports a finding, code removes that text and sets the status to flagged.
+2. **extraction_v1** runs only on text that passed the screen. Code then verifies the output, stores it in the database, and applies the gates.
+
+If the database already holds a verified result for the same file hash and the same schema, prompt, and model versions (injection_v1 and extraction_v1 included), neither prompt runs again and the stored result is used.
+
+**Stage 2, when the reviewer clicks Rank (once per ranking run):**
+3. Code computes the scores and ranks, but only when at least two proposals are eligible.
+4. **reason_v1** then writes one line per proposal from the computed results. It runs again on every ranking run, because ranks and scores can change when proposals are added.
 
 Settings for all prompts: temperature 0, JSON output only, and the prompt version label is saved in the audit log with every output. Proposal text is always sent with page markers in this format: `[[PAGE 3]]`.
 
