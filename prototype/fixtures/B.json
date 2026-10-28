@@ -1,0 +1,86 @@
+{
+  "licence_number": {
+    "value": null,
+    "quote": null,
+    "page": null,
+    "note": "no licence number stated"
+  },
+  "licence_held_by_bidder": {
+    "value": false,
+    "quote": "Electrical work will be completed by a licensed electrical subcontractor, to be confirmed after contract award",
+    "page": 1,
+    "note": "licence belongs to a subcontractor, to be confirmed after award"
+  },
+  "wsib_clearance": {
+    "value": true,
+    "quote": "We carry WSIB clearance",
+    "page": 1,
+    "note": null
+  },
+  "liability_insurance_cad": {
+    "value": 5000000,
+    "quote": "$5M liability insurance",
+    "page": 1,
+    "note": null
+  },
+  "installs_100kw_plus": {
+    "value": 6,
+    "quote": "delivered six commercial solar projects over 100 kW in the past four years",
+    "page": 1,
+    "note": null
+  },
+  "installs_period_text": {
+    "value": "in the past four years",
+    "quote": "in the past four years",
+    "page": 1,
+    "note": null
+  },
+  "total_price_cad": {
+    "value": 189500,
+    "quote": "$189,500 CAD all-in",
+    "page": 1,
+    "note": null
+  },
+  "completion_weeks": {
+    "value": 10,
+    "quote": "We can finish in 10 weeks",
+    "page": 1,
+    "note": null
+  },
+  "panel_warranty_years": {
+    "value": 25,
+    "quote": "25-year warranty",
+    "page": 1,
+    "note": null
+  },
+  "workmanship_warranty_years": {
+    "value": 5,
+    "quote": "workmanship is covered for 5 years",
+    "page": 1,
+    "note": null
+  },
+  "named_project_lead": {
+    "value": null,
+    "quote": null,
+    "page": null,
+    "note": "a project coordinator will be assigned at kickoff, no name given"
+  },
+  "crew_size": {
+    "value": null,
+    "quote": null,
+    "page": null,
+    "note": "not stated"
+  },
+  "safety_plan": {
+    "value": null,
+    "quote": null,
+    "page": null,
+    "note": "not stated"
+  },
+  "monitoring_plan": {
+    "value": null,
+    "quote": null,
+    "page": null,
+    "note": "not stated"
+  }
+}

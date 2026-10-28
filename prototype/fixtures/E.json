@@ -1,0 +1,86 @@
+{
+  "licence_number": {
+    "value": "ECRA/ESA #7003456",
+    "quote": "Ontario electrical contractor licence (ECRA/ESA #7003456)",
+    "page": 1,
+    "note": null
+  },
+  "licence_held_by_bidder": {
+    "value": true,
+    "quote": "We hold an Ontario electrical contractor licence (ECRA/ESA #7003456)",
+    "page": 1,
+    "note": null
+  },
+  "wsib_clearance": {
+    "value": true,
+    "quote": "WSIB clearance",
+    "page": 1,
+    "note": null
+  },
+  "liability_insurance_cad": {
+    "value": 5000000,
+    "quote": "$5M liability insurance",
+    "page": 1,
+    "note": null
+  },
+  "installs_100kw_plus": {
+    "value": 8,
+    "quote": "completed eight commercial installations of 100 kW or more since 2021",
+    "page": 1,
+    "note": null
+  },
+  "installs_period_text": {
+    "value": "since 2021",
+    "quote": "since 2021",
+    "page": 1,
+    "note": null
+  },
+  "total_price_cad": {
+    "value": 242500,
+    "quote": "Our price is $242,500 CAD",
+    "page": 1,
+    "note": null
+  },
+  "completion_weeks": {
+    "value": 13,
+    "quote": "completion in 13 weeks",
+    "page": 1,
+    "note": null
+  },
+  "panel_warranty_years": {
+    "value": 25,
+    "quote": "25-year panel warranty",
+    "page": 1,
+    "note": null
+  },
+  "workmanship_warranty_years": {
+    "value": 12,
+    "quote": "12-year workmanship warranty",
+    "page": 1,
+    "note": null
+  },
+  "named_project_lead": {
+    "value": true,
+    "quote": "A named project lead",
+    "page": 1,
+    "note": null
+  },
+  "crew_size": {
+    "value": 6,
+    "quote": "six-person crew",
+    "page": 1,
+    "note": null
+  },
+  "safety_plan": {
+    "value": true,
+    "quote": "a safety plan",
+    "page": 1,
+    "note": null
+  },
+  "monitoring_plan": {
+    "value": true,
+    "quote": "24 months of performance monitoring",
+    "page": 1,
+    "note": null
+  }
+}

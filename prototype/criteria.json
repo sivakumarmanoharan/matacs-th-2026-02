@@ -13,14 +13,38 @@
       "id": "licence",
       "name": "Ontario electrical contractor licence",
       "rule": "Licence number is held by the bidder and stated in the proposal. A subcontractor licence or a licence 'to be confirmed' fails. Not stated at all = flagged.",
-      "on_fail": "ineligible"
+      "on_fail": "ineligible",
+      "fields": [
+        {
+          "name": "licence_number",
+          "type": "string",
+          "description": "the Ontario electrical contractor licence number"
+        },
+        {
+          "name": "licence_held_by_bidder",
+          "type": "boolean",
+          "description": "true only if the bidder itself holds the licence"
+        }
+      ]
     },
     {
       "id": "wsib_insurance",
       "name": "WSIB clearance and $5M liability insurance",
       "rule": "Both are confirmed in the proposal. One missing = flagged. Stated below $5M = ineligible.",
       "min_liability_cad": 5000000,
-      "on_fail": "ineligible"
+      "on_fail": "ineligible",
+      "fields": [
+        {
+          "name": "wsib_clearance",
+          "type": "boolean",
+          "description": "WSIB clearance is stated"
+        },
+        {
+          "name": "liability_insurance_cad",
+          "type": "integer",
+          "description": "liability insurance amount in dollars"
+        }
+      ]
     }
   ],
   "requirement_checks": [
@@ -45,7 +69,19 @@
       "weight": 30,
       "evidence": "Count of commercial installs of 100 kW or more in the last 5 years, plus the start year the bidder gives.",
       "rule": "weight * min(installs, cap) / cap",
-      "cap": 12
+      "cap": 12,
+      "fields": [
+        {
+          "name": "installs_100kw_plus",
+          "type": "integer",
+          "description": "number of commercial installs of 100 kW or more"
+        },
+        {
+          "name": "installs_period_text",
+          "type": "string",
+          "description": "the period the proposal gives for those installs, as written"
+        }
+      ]
     },
     {
       "id": "price",
@@ -53,28 +89,84 @@
       "weight": 25,
       "evidence": "Total price in CAD and whether it is all-in.",
       "rule": "weight * lowest_eligible_price / bid_price",
-      "baseline": "eligible bids only"
+      "baseline": "eligible bids only",
+      "fields": [
+        {
+          "name": "total_price_cad",
+          "type": "integer",
+          "description": "total price in Canadian dollars"
+        }
+      ]
     },
     {
       "id": "timeline",
       "name": "Timeline",
       "weight": 15,
       "evidence": "Completion time in weeks from award.",
-      "rule": "weight * shortest_eligible_weeks / bid_weeks; unstated or over project.max_weeks_from_award is handled by requirement_checks"
+      "rule": "weight * shortest_eligible_weeks / bid_weeks; unstated or over project.max_weeks_from_award is handled by requirement_checks",
+      "fields": [
+        {
+          "name": "completion_weeks",
+          "type": "integer",
+          "description": "completion time in weeks from award"
+        }
+      ]
     },
     {
       "id": "warranty",
       "name": "Warranty",
       "weight": 15,
       "evidence": "Panel warranty years and workmanship warranty years.",
-      "rule": "weight/2 * min(panel_yrs, 25)/25 + weight/2 * min(workmanship_yrs, 12)/12"
+      "rule": "weight/2 * min(panel_yrs, 25)/25 + weight/2 * min(workmanship_yrs, 12)/12",
+      "fields": [
+        {
+          "name": "panel_warranty_years",
+          "type": "integer",
+          "description": "panel warranty in years"
+        },
+        {
+          "name": "workmanship_warranty_years",
+          "type": "integer",
+          "description": "workmanship warranty in years"
+        }
+      ],
+      "panel_cap_years": 25,
+      "workmanship_cap_years": 12
     },
     {
       "id": "team",
       "name": "Team and approach",
       "weight": 15,
       "evidence": "Named project lead, crew size stated, safety plan, monitoring plan.",
-      "rule": "weight/4 for each of the four items present"
+      "rule": "weight/4 for each of the four items present",
+      "fields": [
+        {
+          "name": "named_project_lead",
+          "type": "boolean",
+          "description": "a named project lead is stated"
+        },
+        {
+          "name": "crew_size",
+          "type": "integer",
+          "description": "crew size"
+        },
+        {
+          "name": "safety_plan",
+          "type": "boolean",
+          "description": "a safety plan is included"
+        },
+        {
+          "name": "monitoring_plan",
+          "type": "boolean",
+          "description": "a performance monitoring plan is included"
+        }
+      ],
+      "items": [
+        "named_project_lead",
+        "crew_size",
+        "safety_plan",
+        "monitoring_plan"
+      ]
     }
   ],
   "validation": [
